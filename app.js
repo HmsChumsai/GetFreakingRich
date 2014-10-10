@@ -5,6 +5,9 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var app = express();
+//---For parsing
+
 // New Code
 var mongo = require('mongodb');
 var monk = require('monk');
@@ -13,10 +16,10 @@ var db = monk('localhost:27017/nodetest1');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
-var app = express();
+
 
 var ip = require("ip");
-console.dir ( ip.address() );
+//console.dir ( ip.address() );
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -32,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static(__dirname));
 
 // Make our db accessible to our router
-app.use(function(req,res,next){
+app.use(function(req, res, next) {
     req.db = db;
     next();
 });
@@ -65,6 +68,7 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
+
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
@@ -72,4 +76,6 @@ app.use(function(err, req, res, next) {
     });
 });
 
+
+console.log('Magic happens on port 8081');
 module.exports = app;
