@@ -1,442 +1,402 @@
 [
     {
-        "name": "SET",
-        "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
-    },
-    {
-        "name": "SET50",
-        "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
-    },
-    {
-        "name": "SET100",
-        "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
-    },
-    {
-        "name": "SETHD",
-        "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
-    },
-    {
-        "name": "mai",
-        "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
-    },
-    {
         "name": "ADVANC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "224.00",
+        "high": "226.00",
+        "low": "223.00",
+        "close": "224.00"
     },
     {
         "name": "AOT",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "222.00",
+        "high": "223.00",
+        "low": "220.00",
+        "close": "221.00"
     },
     {
         "name": "BANPU",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "28.75",
+        "high": "29.00",
+        "low": "28.75",
+        "close": "28.75"
     },
     {
         "name": "BAY",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "47.00",
+        "high": "47.25",
+        "low": "46.75",
+        "close": "47.25"
     },
     {
         "name": "BBL",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "196.00",
+        "high": "197.00",
+        "low": "195.50",
+        "close": "196.50"
     },
     {
         "name": "BCP",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "34.00",
+        "high": "34.25",
+        "low": "33.75",
+        "close": "33.75"
     },
     {
         "name": "BEC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "47.00",
+        "high": "47.75",
+        "low": "46.75",
+        "close": "47.00"
     },
     {
         "name": "BGH",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "18.00",
+        "high": "18.10",
+        "low": "17.90",
+        "close": "17.90"
     },
     {
         "name": "BH",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "127.00",
+        "high": "128.50",
+        "low": "126.00",
+        "close": "127.50"
     },
     {
         "name": "BIGC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "224.00",
+        "high": "226.00",
+        "low": "221.00",
+        "close": "225.00"
     },
     {
         "name": "BJC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "44.25",
+        "high": "44.50",
+        "low": "44.00",
+        "close": "44.50"
     },
     {
         "name": "BLA",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "61.25",
+        "high": "61.50",
+        "low": "61.00",
+        "close": "61.25"
     },
     {
         "name": "BTS",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "10.10",
+        "high": "10.20",
+        "low": "10.00",
+        "close": "10.20"
     },
     {
         "name": "CENTEL",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "37.50",
+        "high": "38.50",
+        "low": "37.50",
+        "close": "38.50"
     },
     {
         "name": "CPALL",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "43.75",
+        "high": "44.00",
+        "low": "43.75",
+        "close": "44.00"
     },
     {
         "name": "CPF",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "31.50",
+        "high": "31.75",
+        "low": "31.25",
+        "close": "31.25"
     },
     {
         "name": "CPN",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "45.50",
+        "high": "46.25",
+        "low": "45.50",
+        "close": "46.00"
     },
     {
         "name": "DELTA",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "61.50",
+        "high": "61.50",
+        "low": "60.50",
+        "close": "60.75"
     },
     {
         "name": "DTAC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "103.50",
+        "high": "104.50",
+        "low": "103.00",
+        "close": "103.50"
     },
     {
         "name": "EGCO",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "172.50",
+        "high": "176.50",
+        "low": "170.50",
+        "close": "173.00"
     },
     {
         "name": "GLOBAL",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "12.70",
+        "high": "13.00",
+        "low": "12.70",
+        "close": "12.80"
     },
     {
         "name": "GLOW",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "94.00",
+        "high": "94.25",
+        "low": "93.25",
+        "close": "93.75"
     },
     {
         "name": "HMPRO",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "10.20",
+        "high": "10.30",
+        "low": "10.10",
+        "close": "10.20"
     },
     {
         "name": "INTUCH",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "71.00",
+        "high": "71.50",
+        "low": "71.00",
+        "close": "71.00"
     },
     {
         "name": "IRPC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "3.40",
+        "high": "3.42",
+        "low": "3.38",
+        "close": "3.40"
     },
     {
         "name": "IVL",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "24.50",
+        "high": "24.70",
+        "low": "24.20",
+        "close": "24.40"
     },
     {
         "name": "JAS",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "6.50",
+        "high": "6.55",
+        "low": "6.45",
+        "close": "6.45"
     },
     {
         "name": "KBANK",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "226.00",
+        "high": "228.00",
+        "low": "225.00",
+        "close": "226.00"
     },
     {
         "name": "KKP",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "39.50",
+        "high": "40.00",
+        "low": "39.50",
+        "close": "40.00"
     },
     {
         "name": "KTB",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "23.20",
+        "high": "23.60",
+        "low": "23.20",
+        "close": "23.30"
     },
     {
         "name": "LH",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "9.85",
+        "high": "9.90",
+        "low": "9.80",
+        "close": "9.85"
     },
     {
         "name": "M",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "60.00",
+        "high": "60.25",
+        "low": "59.50",
+        "close": "59.50"
     },
     {
         "name": "MINT",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "36.25",
+        "high": "37.00",
+        "low": "36.00",
+        "close": "36.75"
     },
     {
         "name": "PS",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "33.75",
+        "high": "34.00",
+        "low": "33.25",
+        "close": "33.50"
     },
     {
         "name": "PTT",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "369.00",
+        "high": "371.00",
+        "low": "367.00",
+        "close": "367.00"
     },
     {
         "name": "PTTEP",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "151.00",
+        "high": "151.50",
+        "low": "150.00",
+        "close": "150.50"
     },
     {
         "name": "PTTGC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "57.50",
+        "high": "58.75",
+        "low": "57.25",
+        "close": "58.25"
     },
     {
         "name": "RATCH",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "61.00",
+        "high": "61.00",
+        "low": "60.25",
+        "close": "60.75"
     },
     {
         "name": "ROBINS",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "51.25",
+        "high": "51.50",
+        "low": "50.75",
+        "close": "51.50"
     },
     {
         "name": "SCB",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "176.00",
+        "high": "177.50",
+        "low": "176.00",
+        "close": "177.00"
     },
     {
         "name": "SCC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "434.00",
+        "high": "436.00",
+        "low": "434.00",
+        "close": "434.00"
     },
     {
         "name": "SCCC",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "422.00",
+        "high": "424.00",
+        "low": "418.00",
+        "close": "422.00"
     },
     {
         "name": "TCAP",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "35.00",
+        "high": "35.00",
+        "low": "34.50",
+        "close": "34.75"
     },
     {
         "name": "THCOM",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "38.25",
+        "high": "39.00",
+        "low": "38.25",
+        "close": "38.75"
     },
     {
         "name": "TMB",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "2.92",
+        "high": "2.94",
+        "low": "2.92",
+        "close": "2.94"
     },
     {
         "name": "TOP",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "48.25",
+        "high": "48.50",
+        "low": "48.00",
+        "close": "48.25"
     },
     {
         "name": "TRUE",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "11.30",
+        "high": "11.50",
+        "low": "11.20",
+        "close": "11.30"
     },
     {
         "name": "TTW",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "12.00",
+        "high": "12.10",
+        "low": "11.90",
+        "close": "12.00"
     },
     {
         "name": "TUF",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "72.50",
+        "high": "74.00",
+        "low": "72.25",
+        "close": "73.50"
     },
     {
         "name": "VGI",
         "date": "",
-        "open": "",
-        "high": "",
-        "low": "",
-        "close": ""
+        "open": "13.30",
+        "high": "13.40",
+        "low": "13.20",
+        "close": "13.30"
     }
 ]

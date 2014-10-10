@@ -83,19 +83,34 @@ router.get('/scrape', function(req, res) {
 
             // $('.bodytext').each(function(day) {
             $('table.bodytext tr td[align=left]').each(function(day) {
-                var stock = {
-                    name: "",
-                    date: "",
-                    open: "",
-                    high: "",
-                    low: "",
-                    close: ""
-                };
-                console.log("found");
-                console.log($(this).text().trim());
-                stock.name=$(this).text().trim();
-                // json+=$(this).text().trim().replace(/\s\s+/g, ',');
-                json.push(stock);
+                console.log(day);
+                if (day > 4) {
+                    var stock = {
+                        name: "",
+                        date: "",
+                        open: "",
+                        high: "",
+                        low: "",
+                        close: ""
+                    };
+                    var current = $(this);
+                    var name = $(this).text().trim();
+                    console.log(name);
+                    var open = $(this).next().next().text().trim();
+                    console.log(open);
+                    var high = $(this).next().next().next().text().trim();
+                    var low = $(this).next().next().next().next().text().trim();
+                    var close = $(this).next().next().next().next().next().text().trim();
+
+                    stock.name = name;
+                    stock.open = open;
+                    stock.high = high;
+                    stock.low = low;
+                    stock.close = close;
+
+                    json.push(stock);
+
+                }
             });
 
         }
@@ -105,7 +120,7 @@ router.get('/scrape', function(req, res) {
         // Parameter 2 :  JSON.stringify(json, null, 4) - the data to write, here we do an extra step by calling JSON.stringify to make our JSON easier to read
         // Parameter 3 :  callback function - a callback function to let us know the status of our function
 
-        fs.writeFile('output.json',  JSON.stringify(json, null, 4), function(err) {
+        fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err) {
 
             console.log('File successfully written! - Check your project directory for the output.json file');
 
