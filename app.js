@@ -15,14 +15,12 @@ var db = monk('localhost:27017/nodetest1');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
-
-
 var ip = require("ip");
 //console.dir ( ip.address() );
 
 // view engine setup
-app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+//app.set('views', path.join(__dirname, 'views'));
 //app.set('view engine', 'jade');
 app.engine('html', require('ejs').renderFile);
 
