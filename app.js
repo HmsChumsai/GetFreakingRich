@@ -21,7 +21,7 @@ var ip = require("ip");
 // view engine setup
 app.set('view engine', 'ejs');
 //app.set('views', path.join(__dirname, 'views'));
-//app.set('view engine', 'jade');
+app.set('view engine', 'jade');
 app.engine('html', require('ejs').renderFile);
 
 app.use(favicon());

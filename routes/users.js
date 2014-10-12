@@ -1805,7 +1805,8 @@ router.get('/', function(req, res) {
         "close": "19.8"
     }]
     //res.render('about.html');
-    res.render('index', {"data":data} );
+    res.render('test', {"data":data} );
+    //res.render('helloworld', {"val":JSON.stringify(data)} );
     //res.json(data);
 });
 
