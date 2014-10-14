@@ -9,9 +9,11 @@ var app = express();
 //---For parsing
 
 // New Code
-var mongo = require('mongodb');
+//var mongo = require('mongodb');
+var mongo = require('mongoskin');
 var monk = require('monk');
-var db = monk('localhost:27017/nodetest1');
+//var db = monk('localhost:27017/nodetest1');
+var db = mongo.db(process.env.MONGOLAB_URI, {native_parser:true});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');

@@ -22,11 +22,17 @@ router.get('/helloworld', function(req, res) {
 /* GET Userlist page. */
 router.get('/userlist', function(req, res) {
     var db = req.db;
-    var collection = db.get('usercollection');
+    //var collection = db.get('usercollection');
+    var collection = db.get('stock');
+    
     collection.find({}, {}, function(e, docs) {
+        /*
         res.render('userlist', {
             "userlist": docs
         });
+        */
+        res.render('userlist');
+        console.log(docs);
     });
 });
 
