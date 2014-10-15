@@ -6,13 +6,16 @@ router.get('/', function(req, res) {
     var collection = req.collection;
     var data = [];
     collection.find({
-        name: "ADVANC"
+        name: "ILINK"
+    }).sort({
+        _id: 1
     }).toArray(function(err, items) {
         //data = items;
 
         console.log("find some items");
-        /*
+        console.log(items.length);
         for (var i = 0; i < items.length; i++) {
+            //for (var i = 0; i < 20; i++) {
             var EOD = {
                 date: "",
                 open: "",
@@ -20,37 +23,21 @@ router.get('/', function(req, res) {
                 low: "",
                 close: ""
             };
-            
+
             EOD.date = items[i].date;
             EOD.open = "" + items[i].open;
             EOD.high = "" + items[i].high;
             EOD.low = "" + items[i].low;
             EOD.close = "" + items[i].close;
             //console.log(JSON.stringify(EOD));
-            data.push(EOD);
-        }
-        */
-        /*
-        var EOD = {
-            date: "",
-            open: "",
-            high: "",
-            low: "",
-            close: ""
-        };
+            data[i] = EOD;
 
-        EOD.date = items[0].date;
-        EOD.open = "" + items[0].open;
-        EOD.high = "" + items[0].high;
-        EOD.low = "" + items[0].low;
-        EOD.close = "" + items[0].close;
-        //console.log(JSON.stringify(EOD));
-        data.push(EOD);
-        */
+        }
 
         res.render('test', {
             "data": data
         });
+
     });
 
 });
