@@ -18,24 +18,34 @@ MongoClient.connect(url, function(err, db) {
     }
     var collection = db.collection('stock');
     db.stats(function(err, stats) {
-       //assert.equal(null, err);
+        //assert.equal(null, err);
         //assert.ok(stats != null);
         //console.log(stats);
-       // db.close();
+        // db.close();
     })
     collection.count(function(err, count) {
         console.log("There are " + count + " records.");
     });
-    
+
+    /*
     collection.find({}).toArray(function(err, items) {
-        //assert.equal(null, err);
-        //assert.equal(0, items.length);
+
         console.log("find some items");
         console.log(JSON.stringify(items));
-       //db.close();
+       
     });
-    
+    */
     /*
+    collection.find({
+        name: "ADVANC"
+    }).toArray(function(err, items) {
+
+        console.log("find some items");
+        console.log(JSON.stringify(items));
+
+    });
+    */
+    
     mongoDbObj.stocks.find({
         "name": "ADVANC"
     }).toArray(function(err, docs) {
@@ -43,9 +53,9 @@ MongoClient.connect(url, function(err, db) {
         //assert.equal(2, docs.length);
         console.log("Found the following records");
         console.log(JSON.stringify(docs));
-
+        
         //callback(docs);
         
     });
-    */
+    
 });

@@ -11,7 +11,6 @@ router.get('/', function(req, res) {
         //data = items;
 
         console.log("find some items");
-        /*
         for (var i = 0; i < items.length; i++) {
             var EOD = {
                 date: "",
@@ -29,30 +28,10 @@ router.get('/', function(req, res) {
             //console.log(JSON.stringify(EOD));
             data.push(EOD);
         }
-        */
-        /*
-        var EOD = {
-            date: "",
-            open: "",
-            high: "",
-            low: "",
-            close: ""
-        };
-
-        EOD.date = items[0].date;
-        EOD.open = "" + items[0].open;
-        EOD.high = "" + items[0].high;
-        EOD.low = "" + items[0].low;
-        EOD.close = "" + items[0].close;
-        //console.log(JSON.stringify(EOD));
-        data.push(EOD);
-        */
-
-        res.render('test', {
-            "data": data
-        });
+        
+        res.render('test', {"data": data});
     });
-
+  
 });
 
 module.exports = router;

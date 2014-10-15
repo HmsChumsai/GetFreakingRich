@@ -5,19 +5,42 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+
 var app = express();
 //---For parsing
 
 // New Code
-//var mongo = require('mongodb');
+/*
 var mongo = require('mongoskin');
 var monk = require('monk');
 //var db = monk('localhost:27017/nodetest1');
 var db = mongo.db(process.env.MONGOLAB_URI, {native_parser:true});
+*/
+//Set Up MongoDb
+var MongoClient = require('mongodb').MongoClient,
+    assert = require('assert');
+    
+var url = 'mongodb://test:1234@ds035250.mongolab.com:35250/gfrdata';
+var mongoDbObj;
+var collection;
+MongoClient.connect(url, function(err, db) {
+    if (err)
+        console.log(err);
+    else {
+        console.log("Connected to MongoDB");
+        mongoDbObj = {
+            db: db,
+            stocks: db.collection('stock')
+        };
+    }
+    collection = db.collection('stock');
+
+});
+
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var ip = require("ip");
+//var ip = require("ip");
 //console.dir ( ip.address() );
 
 // view engine setup
@@ -36,13 +59,14 @@ app.use(express.static(__dirname));
 
 // Make our db accessible to our router
 app.use(function(req, res, next) {
-    req.db = db;
+    //req.db = db;
+    req.collection = collection;
     next();
 });
 
-app.use('/', routes);
-app.use('/users', users);
-
+//app.use('/', routes);
+//app.use('/users', users);
+app.use('/', users);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
