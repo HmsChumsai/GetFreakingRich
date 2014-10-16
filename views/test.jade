@@ -28,15 +28,15 @@ html
       fromField: "low",
       toField: "low"
       }, {
-      fromField: "volume",
-      toField: "volume"
+      fromField: "volumn",
+      toField: "volumn"
       }, {
       fromField: "value",
       toField: "value"
       }],
       color: "#7f8da9",
       dataProvider: data,
-      title: "West Stock",
+      title: "stockname",
       categoryField: "date"
       }],
       panels: [{
@@ -71,7 +71,8 @@ html
       }],
       stockLegend: {
       valueTextRegular: undefined,
-      }
+      },
+      drawingIconsEnabled: true
       },
       {
       title: "Volume",
@@ -85,7 +86,7 @@ html
       dashLength: 5
       },
       stockGraphs: [{
-      valueField: "volume",
+      valueField: "volumn",
       type: "column",
       showBalloon: false,
       fillAlphas: 1
@@ -98,6 +99,17 @@ html
       }
       }
       ],
+      dataSetSelector: {
+      position: "left"
+      },
+      panelsSettings: {
+      color: "#fff",
+      plotAreaFillColors: "#000",
+      plotAreaFillAlphas: 0.2,
+      marginLeft: 60,
+      marginTop: 5,
+      marginBottom: 5
+      },
       chartScrollbarSettings: {
       graph: "g1",
       graphType: "line",
@@ -125,15 +137,9 @@ html
       }, {
       period: "YTD",
       label: "YTD"
-      }, {
-      period: "MAX",
-      label: "MAX"
       }]
       }
       });
 body
 #chartdiv
-block content
-form#formGetChart(name="getchart",method="get",action="/testest")
-input#inputStockName(type="text", placeholder="e.g ADVANC", name="stockname")
-button#btnSubmit(type="submit") GO!
+

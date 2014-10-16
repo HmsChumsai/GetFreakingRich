@@ -5,10 +5,10 @@ var router = express.Router();
 router.get('/', function(req, res) {
     var collection = req.collection;
     var stockname=req.body.stockname;
-    if (!stockname) {stockname="ILINK"};
+    if (!stockname) {stockname="SET"};
     var data = [];
     collection.find({
-        name: "ILINK"
+        name: stockname
     }).sort({
         _id: 1
     }).toArray(function(err, items) {
@@ -47,7 +47,7 @@ router.get('/', function(req, res) {
 router.get('/:id', function(req, res) {
     var collection = req.collection;
     var stockname=req.params.id;
-    if (!stockname) {stockname="ILINK"};
+    if (!stockname) {stockname="SET"};
     var data = [];
     collection.find({
         name: stockname
@@ -65,7 +65,8 @@ router.get('/:id', function(req, res) {
                 open: "",
                 high: "",
                 low: "",
-                close: ""
+                close: "",
+                volume:""
             };
 
             EOD.date = items[i].date;
@@ -73,13 +74,15 @@ router.get('/:id', function(req, res) {
             EOD.high = "" + items[i].high;
             EOD.low = "" + items[i].low;
             EOD.close = "" + items[i].close;
+            EOD.volumn="" + items[i].volumn
             //console.log(JSON.stringify(EOD));
             data[i] = EOD;
 
         }
 
         res.render('test', {
-            "data": data
+            "data": data,
+            "stockname":stockname
         });
 
     });

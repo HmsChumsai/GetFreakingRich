@@ -85,7 +85,7 @@ var chart = AmCharts.makeChart("chartdiv", {
 			},
 
 			stockGraphs: [{
-				valueField: "volume",
+				valueField: "volumn",
 				type: "column",
 				showBalloon: false,
 				fillAlphas: 1
