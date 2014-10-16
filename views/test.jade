@@ -38,13 +38,61 @@ html
       dataProvider: data,
       title: "stockname",
       categoryField: "date"
+      }, {
+      fieldMappings: [{
+      fromField: "open",
+      toField: "open"
+      }, {
+      fromField: "close",
+      toField: "close"
+      }, {
+      fromField: "high",
+      toField: "high"
+      }, {
+      fromField: "low",
+      toField: "low"
+      }, {
+      fromField: "volumn",
+      toField: "volumn"
+      }, {
+      fromField: "value",
+      toField: "value"
+      }],
+      color: "#7f8da9",
+      dataProvider: data,
+      title: "stock2",
+      categoryField: "date"
+      }, {
+      fieldMappings: [{
+      fromField: "open",
+      toField: "open"
+      }, {
+      fromField: "close",
+      toField: "close"
+      }, {
+      fromField: "high",
+      toField: "high"
+      }, {
+      fromField: "low",
+      toField: "low"
+      }, {
+      fromField: "volumn",
+      toField: "volumn"
+      }, {
+      fromField: "value",
+      toField: "value"
+      }],
+      color: "#7f8da9",
+      dataProvider: data,
+      title: "stock3",
+      categoryField: "date"
       }],
       panels: [{
       title: "Value",
       showCategoryAxis: false,
       percentHeight: 70,
       valueAxes: [{
-      id:"v1",
+      id: "v1",
       dashLength: 5
       }],
       categoryAxis: {
@@ -67,14 +115,13 @@ html
       comparable: true,
       compareField: "value",
       showBalloon: false,
-      proCandlesticks:true
+      proCandlesticks: true
       }],
       stockLegend: {
       valueTextRegular: undefined,
       },
       drawingIconsEnabled: true
-      },
-      {
+      }, {
       title: "Volume",
       percentHeight: 30,
       marginTop: 1,
@@ -97,30 +144,21 @@ html
       labelText: "",
       periodValueTextRegular: "[[value.close]]"
       }
-      }
-      ],
-      dataSetSelector: {
-      position: "left"
-      },
-      panelsSettings: {
-      color: "#fff",
-      plotAreaFillColors: "#000",
-      plotAreaFillAlphas: 0.2,
-      marginLeft: 60,
-      marginTop: 5,
-      marginBottom: 5
-      },
+      }],
       chartScrollbarSettings: {
       graph: "g1",
       graphType: "line",
       usePeriod: "WW"
       },
-      chartCursorSettings:{
-      valueLineBalloonEnabled:true,
-      valueLineEnabled:true
+      chartCursorSettings: {
+      valueLineBalloonEnabled: true,
+      valueLineEnabled: true
+      },
+      dataSetSelector: {
+      position: "left"
       },
       periodSelector: {
-      position: "bottom",
+      position: "left",
       periods: [{
       period: "DD",
       count: 10,
@@ -141,5 +179,5 @@ html
       }
       });
 body
-#chartdiv
+  #chartdiv
 

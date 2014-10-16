@@ -39,8 +39,7 @@
     box-sizing: initial;
 }
 .amChartsInputField {} .amChartsLegend {} .amChartsPanel {} #chartdiv {
-   
-   margin: 0 auto;
+    margin: 0 auto;
     width: 90%;
     height: 100%;
     font-size: 14px;
