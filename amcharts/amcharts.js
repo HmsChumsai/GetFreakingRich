@@ -2161,7 +2161,7 @@ AmCharts.AmChart = AmCharts.Class({
             if ("serial" == this.type || "xy" == this.type) b = this.marginLeftReal, c = this.marginTopReal, d = b + this.plotAreaWidth, e = c + this.plotAreaHeight;
             var f = "http://www.amcharts.com/javascript-charts/",
                 g = "JavaScript charts",
-                h = "StockChart By GetFreakingRich";
+                h = "StockChart By Todayhoon.com";
             var k = document.createElement("a"),
                 h = document.createTextNode(h);
             //k.setAttribute("href", f);
