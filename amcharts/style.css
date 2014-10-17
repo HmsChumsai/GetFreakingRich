@@ -41,6 +41,6 @@
 .amChartsInputField {} .amChartsLegend {} .amChartsPanel {} #chartdiv {
     margin: 0 auto;
     width: 90%;
-    height: 90%;
+    height: 400px;
     font-size: 14px;
 }
