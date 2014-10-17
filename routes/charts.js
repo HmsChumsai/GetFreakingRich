@@ -3,10 +3,12 @@ var router = express.Router();
 
 /* GET Stock Chart. */
 router.get('/', function(req, res) {
+    if (req.params.id=="google-site-verification") {res.render("googled1927f7027c71455.html")};
+        
     console.log("Path / reg.params="+JSON.stringify(req.params));
     console.log("Path / reg.body="+JSON.stringify(req.body));
     console.log("Path / reg.query="+JSON.stringify(req.query));
-
+    
     var collection = req.collection;
     var stockname=req.query.stockname;
     if (!stockname) {stockname="SET"};

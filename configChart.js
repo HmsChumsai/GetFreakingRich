@@ -1,6 +1,3 @@
-var data = !{
-	JSON.stringify(data)
-};
 var chart = AmCharts.makeChart("chartdiv", {
 	type: "stock",
 	"theme": "none",
@@ -29,7 +26,7 @@ var chart = AmCharts.makeChart("chartdiv", {
 		dataProvider: data,
 		title: "stockname",
 		categoryField: "date"
-	},{
+	}, {
 		fieldMappings: [{
 			fromField: "open",
 			toField: "open"
@@ -53,7 +50,7 @@ var chart = AmCharts.makeChart("chartdiv", {
 		dataProvider: data,
 		title: "stock2",
 		categoryField: "date"
-	},{
+	}, {
 		fieldMappings: [{
 			fromField: "open",
 			toField: "open"
@@ -145,8 +142,12 @@ var chart = AmCharts.makeChart("chartdiv", {
 		valueLineBalloonEnabled: true,
 		valueLineEnabled: true
 	},
+	dataSetSelector: {
+		position: "left"
+	},
 	periodSelector: {
-		position: "bottom",
+		selectFromStart: true,
+		position: "left",
 		periods: [{
 			period: "DD",
 			count: 10,

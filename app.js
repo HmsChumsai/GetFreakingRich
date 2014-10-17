@@ -66,6 +66,10 @@ app.use(function(req, res, next) {
 
 //app.use('/', routes);
 //app.use('/users', users);
+app.use('/googled1927f7027c71455.html', function (req, res, next) {
+    console.log("googled")
+    res.render("google.html");
+});
 app.use('/', charts);
 
 /// catch 404 and forwarding to error handler
