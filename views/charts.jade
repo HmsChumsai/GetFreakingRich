@@ -15,6 +15,8 @@ html
     script(type='text/javascript').
       var data = !{JSON.stringify(data)};
       var name = !{JSON.stringify(stockname)};
+      var second = !{JSON.stringify(second)};
+      var third = !{JSON.stringify(third)};
       var chart = AmCharts.makeChart("chartdiv", {
       type: "stock",
       "theme": "none",
@@ -39,7 +41,6 @@ html
       fromField: "value",
       toField: "value"
       }],
-      color: "#7f8da9",
       dataProvider: data,
       title: name,
       categoryField: "date"
@@ -63,9 +64,8 @@ html
       fromField: "value",
       toField: "value"
       }],
-      color: "#7f8da9",
-      dataProvider: data,
-      title: "stock2",
+      dataProvider: second,
+      title: "SET",
       categoryField: "date"
       }, {
       fieldMappings: [{
@@ -87,9 +87,8 @@ html
       fromField: "value",
       toField: "value"
       }],
-      color: "#7f8da9",
-      dataProvider: data,
-      title: "stock3",
+      dataProvider: third,
+      title: "SET50",
       categoryField: "date"
       }],
       panels: [{
@@ -209,7 +208,7 @@ nav.navigation-bar
         .element.input-element
           form
             .input-control.text
-              input(id='stockname',type='text', placeholder='Search...',name="stockname")
+              input(id='stockname',type='text', placeholder='e.g. ADVANC',name="stockname")
               button.btn-search
         .element.place-right
           a.dropdown-toggle(href='#')
