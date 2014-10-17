@@ -39,7 +39,7 @@ MongoClient.connect(url, function(err, db) {
 
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var charts = require('./routes/users');
 //var ip = require("ip");
 //console.dir ( ip.address() );
 
@@ -66,7 +66,7 @@ app.use(function(req, res, next) {
 
 //app.use('/', routes);
 //app.use('/users', users);
-app.use('/', users);
+app.use('/', charts);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {

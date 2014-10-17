@@ -80,7 +80,7 @@ router.get('/:id', function(req, res) {
 
         }
 
-        res.render('test', {
+        res.render('charts', {
             "data": data,
             "stockname":stockname
         });
