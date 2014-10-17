@@ -39,7 +39,7 @@ MongoClient.connect(url, function(err, db) {
 
 
 var routes = require('./routes/index');
-var charts = require('./routes/users');
+var charts = require('./routes/charts');
 //var ip = require("ip");
 //console.dir ( ip.address() );
 
