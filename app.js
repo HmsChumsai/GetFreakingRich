@@ -49,6 +49,7 @@ app.set('view engine', 'ejs');
 app.set('view engine', 'jade');
 app.engine('html', require('ejs').renderFile);
 
+app.use(require('prerender-node').set('prerenderToken', 'YOUR_TOKEN'));
 app.use(favicon());
 app.use(logger('dev'));
 app.use(bodyParser.json());

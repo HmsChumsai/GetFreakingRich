@@ -19,7 +19,7 @@ html
       var third = !{JSON.stringify(third)};
       var chart = AmCharts.makeChart("chartdiv", {
       type: "stock",
-      "theme": "none",
+      "theme": "dark",
       pathToImages: "http://www.amcharts.com/lib/3/images/",
       dataSets: [{
       fieldMappings: [{
@@ -155,6 +155,7 @@ html
       usePeriod: "WW"
       },
       chartCursorSettings: {
+      pan:true,
       valueLineBalloonEnabled: true,
       valueLineEnabled: true
       },
