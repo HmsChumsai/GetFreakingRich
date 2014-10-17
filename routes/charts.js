@@ -3,8 +3,12 @@ var router = express.Router();
 
 /* GET Stock Chart. */
 router.get('/', function(req, res) {
+    console.log("Path / reg.params="+JSON.stringify(req.params));
+    console.log("Path / reg.body="+JSON.stringify(req.body));
+    console.log("Path / reg.query="+JSON.stringify(req.query));
+
     var collection = req.collection;
-    var stockname=req.body.stockname;
+    var stockname=req.query.stockname;
     if (!stockname) {stockname="SET"};
     var data = [];
     collection.find({
@@ -47,6 +51,9 @@ router.get('/', function(req, res) {
 router.get('/:id', function(req, res) {
     var collection = req.collection;
     var stockname=req.params.id;
+    console.log("Path /:id reg.params="+JSON.stringify(req.params));
+    console.log("Path /:id reg.body="+JSON.stringify(req.body));
+    console.log("Path /:id reg.query="+JSON.stringify(req.query));
     if (!stockname) {stockname="SET"};
     var data = [];
     collection.find({
