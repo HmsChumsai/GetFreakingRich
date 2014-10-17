@@ -78,7 +78,6 @@ router.post('/adduser', function(req, res) {
 router.get('/scrape', function(req, res) {
 
     url = 'http://marketdata.set.or.th/mkt/sectorquotation.do?sector=SET50&language=th&country=TH';
-
     request(url, function(error, response, html) {
         if (!error) {
             var $ = cheerio.load(html);
