@@ -76,7 +76,8 @@ AmCharts.ready(function() {
         var dataSets = [];
         for (var x in indices) {
             // load events
-            var events = AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '_events.csv');
+           //var events = AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '_events.csv');
+           var events = AmCharts.loadCSV(indices[x] + '_events.csv');
             for (var e in events) {
                 switch (events[e].Type) {
                     case 'A':
@@ -117,7 +118,8 @@ AmCharts.ready(function() {
                     toField: "volume"
                 }],
                 compared: x != 0,
-                dataProvider: AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '.csv'),
+                //dataProvider: AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '.csv'),
+                dataProvider: AmCharts.loadCSV(indices[x] + '.csv'),
                 categoryField: "Date",
                 stockEvents: events
             });
