@@ -2,44 +2,11 @@ var express = require('express');
 var async = require("async");
 var router = express.Router();
 
-/*
 router.get('/', function(req, res, next) {
-    	var chartData = [{
-		date: new Date(2011, 5, 1, 0, 0, 0, 0),
-		val: 10
-	}, {
-		date: new Date(2011, 5, 2, 0, 0, 0, 0),
-		val: 11
-	}, {
-		date: new Date(2011, 5, 3, 0, 0, 0, 0),
-		val: 12
-	}, {
-		date: new Date(2011, 5, 4, 0, 0, 0, 0),
-		val: 11
-	}, {
-		date: new Date(2011, 5, 5, 0, 0, 0, 0),
-		val: 10
-	}, {
-		date: new Date(2011, 5, 6, 0, 0, 0, 0),
-		val: 11
-	}, {
-		date: new Date(2011, 5, 7, 0, 0, 0, 0),
-		val: 13
-	}, {
-		date: new Date(2011, 5, 8, 0, 0, 0, 0),
-		val: 14
-	}, {
-		date: new Date(2011, 5, 9, 0, 0, 0, 0),
-		val: 17
-	}, {
-		date: new Date(2011, 5, 10, 0, 0, 0, 0),
-		val: 13
-	}];
-    res.render("index.ejs",{"chartData":chartData});
+    res.render("index.html");
 });
 
-*/
-
+/*
 
 router.get('/', function(req, res, next) {
 
@@ -52,12 +19,29 @@ router.get('/', function(req, res, next) {
     var asyncTask = []
     asyncTask.push(getStockData(collection, stockname));
     async.series(asyncTask
+        /*
+        async.series([
+            //Load user to get userId first
+            function(callback) {
+                collection.find({
+                    name: stockname
+                }).sort({
+                    date: 1
+                }).toArray(function(err, items) {
+                    console.log("getStockData() invoked");
+                    for (var pos in items) {
+                        results.push(items[pos]);
+                    }
+                    // console.log("getStockData() = "+JSON.stringify(array));
+                    callback();
+                });
+            }
+        
         , function(err) { //This function gets called after the two tasks have called their "task callbacks"
             if (err) return next(err);
             console.log(JSON.stringify(results));
-            //res.render('charts', {"data":results});
+            res.render('charts', {"data":results});
             console.log(stockname);
-            res.render("index.ejs",{"chartData":results});
         });
     //function for factoring asyncTask creation
     function getStockData(collection, stockname) {
@@ -88,5 +72,6 @@ router.get('/', function(req, res, next) {
     };
 });
 
+*/
 
 module.exports = router;
