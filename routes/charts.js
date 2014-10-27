@@ -1,11 +1,11 @@
 var express = require('express');
 var async = require("async");
 var router = express.Router();
-/*
-router.get('/', function(req, res, next) {
-    res.render("index.ejs");
+
+router.get('/test', function(req, res, next) {
+    res.render("index.html");
 });
-*/
+
 
 
 router.get('/', function(req, res, next) {

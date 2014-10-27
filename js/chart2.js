@@ -70,61 +70,73 @@ AmCharts.ready(function() {
     setTimeout(function() {
 
         /**
-         * Define all data sets
-         */
-        var indices = ['MSFT', 'TXN'];
-        var dataSets = [];
-        for (var x in indices) {
-            // load events
-           //var events = AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '_events.csv');
-           var events = AmCharts.loadCSV(indices[x] + '_events.csv');
-            for (var e in events) {
-                switch (events[e].Type) {
-                    case 'A':
-                        var color = "#85CDE6";
-                        break;
-                    default:
-                        var color = "#cccccc";
-                        break;
-                }
-                events[e].Description = events[e].Description.replace("Upgrade", "<strong style=\"color: #0c0\">Upgrade</strong>").replace("Downgrade", "<strong style=\"color: #c00\">Downgrade</strong>");
-                events[e] = {
-                    type: "pin",
-                    graph: "g1",
-                    backgroundColor: color,
-                    date: events[e].Date,
-                    text: events[e].Type,
-                    description: "<strong>" + events[e].Title + "</strong><br />" + events[e].Description
-                };
-            }
+        * Define all data sets
 
-            // add data set
+        */
+        var indices = ['MSFT', 'TXN'];
+       //var indices = ['MSFT'];
+        var dataSets = [];
+        
+        for (var idx in data) {
+            //consol.log(JSON.stringify(data[idx].data));
             dataSets.push({
-                title: indices[x],
+                title: data[idx].stockname,
                 fieldMappings: [{
-                    fromField: "Open",
+                    fromField: "open",
                     toField: "open"
                 }, {
-                    fromField: "High",
+                    fromField: "high",
                     toField: "high"
                 }, {
-                    fromField: "Low",
+                    fromField: "low",
                     toField: "low"
                 }, {
-                    fromField: "Close",
+                    fromField: "close",
                     toField: "close"
                 }, {
-                    fromField: "Volume",
-                    toField: "volume"
+                    fromField: "volumn",
+                    toField: "volumn"
                 }],
-                compared: x != 0,
+                compared: idx != 0,
                 //dataProvider: AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '.csv'),
-                dataProvider: AmCharts.loadCSV(indices[x] + '.csv'),
-                categoryField: "Date",
-                stockEvents: events
+                dataProvider: data[idx].data,
+                categoryField: "date"
+                //stockEvents: events
             });
         }
+        
+        
+        /*
+        for (var x in indices) {
 
+        // add data set
+        dataSets.push({
+        title: indices[x],
+        fieldMappings: [{
+        fromField: "Open",
+        toField: "open"
+        }, {
+        fromField: "High",
+        toField: "high"
+        }, {
+        fromField: "Low",
+        toField: "low"
+        }, {
+        fromField: "Close",
+        toField: "close"
+        }, {
+        fromField: "Volume",
+        toField: "volume"
+        }],
+        compared: x != 0,
+        //dataProvider: AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '.csv'),
+        dataProvider: AmCharts.loadCSV(indices[x] + '.csv'),
+        categoryField: "Date",
+        //stockEvents: events
+        });
+        }
+        */
+        
         /**
          * Build the chart
          */
@@ -133,7 +145,7 @@ AmCharts.ready(function() {
             pathToImages: "http://www.amcharts.com/lib/3/images/",
             color: "#fff",
             dataSets: dataSets,
-            dataDateFormat: "YYYY-MM-DD",
+            dataDateFormat: "MM/DD/YYYY",
 
             panels: [{
                     title: "Value",
@@ -176,7 +188,7 @@ AmCharts.ready(function() {
                     showCategoryAxis: false,
 
                     stockGraphs: [{
-                        valueField: "volume",
+                        valueField: "volumn",
                         openField: "open",
                         type: "column",
                         showBalloon: false,
