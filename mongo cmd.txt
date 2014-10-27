@@ -1,0 +1,5 @@
+MIGRATING SV
+mongoimport -h ds035250.mongolab.com:35250 -d gfrdata -c stock -u admin -p P@ssw0rd --file EOD1.csv --type csv --headerline 
+
+CONNECTING
+mongo ds035250.mongolab.com:35250/gfrdata -u admin -p P@ssw0rd

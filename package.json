@@ -1,0 +1,26 @@
+{
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "body-parser": "~1.0.0",
+    "prerender-node":"*",
+    "cheerio": "*",
+    "async":"*",
+    "cookie-parser": "~1.0.1",
+    "debug": "~0.7.4",
+    "ejs": "*",
+    "express": "*",
+    "ip": "*",
+    "jade": "~1.3.0",
+    "mongodb": "*",
+    "monk": "*",
+    "morgan": "~1.0.0",
+    "prerender-node": "^1.1.1",
+    "request": "*",
+    "static-favicon": "~1.0.0"
+  }
+}
