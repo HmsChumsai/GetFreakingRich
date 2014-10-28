@@ -30,10 +30,26 @@ var assets = {
     '/js/chart2.js': ['/js/chart2.js'],
     '/amcharts/amstock.js': ['/amcharts/amstock.js'],
     '/amcharts/serial.js': ['/amcharts/serial.js'],
-    '/amcharts/amcharts.js': ['/amcharts/amcharts.js']
-}
+    '/amcharts/amcharts.js': ['/amcharts/amcharts.js'],
+    '/assets/global/scripts/metronic.js': ['/assets/global/scripts/metronic.js'],
+    '/assets/admin/layout/scripts/layout.js': ['/assets/admin/layout/scripts/layout.js'],
+    '/assets/admin/layout/scripts/quick-sidebar.js': ['/assets/admin/layout/scripts/quick-sidebar.js'],
+    '/assets/admin/layout/scripts/demo.js': ['/assets/admin/layout/scripts/demo.js'],
+    '/assets/admin/pages/scripts/index.js': ['/assets/admin/pages/scripts/index.js'],
+    '/assets/admin/pages/scripts/tasks.js': ['/assets/admin/pages/scripts/tasks.js'],
+    '/assets/global/plugins/jquery.min.js': ['/assets/global/plugins/jquery.min.js'],
+    '/assets/global/plugins/jquery-migrate.min.js': ['/assets/global/plugins/jquery-migrate.min.js'],
+    '/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js': ['/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js'],
+    '/assets/global/plugins/bootstrap/js/bootstrap.min.js': ['/assets/global/plugins/bootstrap/js/bootstrap.min.js'],
+    '/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js': ['/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'],
+    '/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js': ['/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'],
+    '/assets/global/plugins/jquery.blockui.min.js': ['/assets/global/plugins/jquery.blockui.min.js'],
+    '/assets/global/plugins/jquery.cokie.min.js': ['/assets/global/plugins/jquery.cokie.min.js'],
+    '/assets/global/plugins/uniform/jquery.uniform.min.js': ['/assets/global/plugins/uniform/jquery.uniform.min.js'],
+    '/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js': ['/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js']
+};
 app.use(cachify.setup(assets, {
-    root: __dirname
+    root: __dirname,
 }));
 
 
@@ -125,7 +141,6 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 console.log('Magic happens on port 8081');
 module.exports = app;
