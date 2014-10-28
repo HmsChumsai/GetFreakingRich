@@ -9,7 +9,7 @@ router.get('/test', function(req, res, next) {
 
 
 router.get('/', function(req, res, next) {
-
+    console.log("reg.query = "+req.query.stockname);
     var collection = req.collection;
     var stockname = req.query.stockname;
     if (!stockname) {
@@ -20,11 +20,11 @@ router.get('/', function(req, res, next) {
     asyncTask.push(getStockData(collection, stockname));
     async.series(asyncTask, function(err) { //This function gets called after the two tasks have called their "task callbacks"
         if (err) return next(err);
-        console.log(JSON.stringify(results));
+        //console.log(JSON.stringify(results));
         res.render('index.ejs', {
             "data": results
         });
-        console.log(stockname);
+        //console.log(stockname);
     });
     //function for factoring asyncTask creation
     function getStockData(collection, stockname) {
@@ -48,7 +48,7 @@ router.get('/', function(req, res, next) {
                 stockdata["stockname"] = stockname;
                 stockdata["data"] = array;
                 results.push(stockdata);
-                console.log("getStockData() = " + JSON.stringify(stockdata));
+                //console.log("getStockData() = " + JSON.stringify(stockdata));
                 callback();
             });
         }

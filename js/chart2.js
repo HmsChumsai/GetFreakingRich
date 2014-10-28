@@ -145,7 +145,7 @@ AmCharts.ready(function() {
             pathToImages: "http://www.amcharts.com/lib/3/images/",
             color: "#fff",
             dataSets: dataSets,
-            dataDateFormat: "MM/DD/YYYY",
+            //dataDateFormat: "DD/MM/YYYY",
 
             panels: [{
                     title: "Value",
