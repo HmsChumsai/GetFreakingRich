@@ -1,67 +1,5 @@
 //var data = !{JSON.stringify(data)};
 AmCharts.ready(function() {
-    /**
-     * Loads the external CSV file
-     */
-    AmCharts.loadCSV = function(file) {
-        if (window.XMLHttpRequest) {
-            // IE7+, Firefox, Chrome, Opera, Safari
-            var request = new XMLHttpRequest();
-        }
-        else {
-            // code for IE6, IE5
-            var request = new ActiveXObject('Microsoft.XMLHTTP');
-        }
-        // load
-        try {
-            request.open('GET', file, false);
-            request.send();
-            if (200 != request.status)
-                return [];
-        }
-        catch (e) {
-            return [];
-        }
-        return AmCharts.parseCSV(request.responseText);
-    }
-
-    /**
-     * Parses CSV file
-     */
-    AmCharts.parseCSV = function(data) {
-        // init empty data array
-        var chartData = []
-
-        //replace UNIX new lines
-        data = data.replace(/\r\n/g, "\n");
-        //replace MAC new lines
-        data = data.replace(/\r/g, "\n");
-        //split into rows
-        var rows = data.split("\n");
-
-        // first line contains field names
-        var fields = rows.shift().split(",");
-
-        // loop through all rows
-        var row;
-        while (row = rows.pop()) {
-            // our columns are separated by comma
-            var column = row.split(",");
-
-            // init data object
-            var dataObject = {};
-
-            // add data for all the fields
-            for (var x in column) {
-                dataObject[fields[x]] = column[x];
-            }
-
-            // add object to chartData array
-            chartData.push(dataObject);
-        }
-
-        return chartData;
-    }
 
     /**
      * Delay loading by a few moments so that the page has a chace to build itself
@@ -69,16 +7,85 @@ AmCharts.ready(function() {
 
     setTimeout(function() {
 
-        /**
-        * Define all data sets
+            /**
+            * Define all data sets
 
-        */
-        var indices = ['MSFT', 'TXN'];
-       //var indices = ['MSFT'];
-        var dataSets = [];
-        
-        for (var idx in data) {
-            //consol.log(JSON.stringify(data[idx].data));
+            */
+
+
+            var dataSets = [];
+
+            for (var idx in data) {
+                /*
+                var tmpstockdata = [{
+                        "date": "03-1-2014",
+                        "open": 1215.86,
+                        "high": 1234.52,
+                        "low": 1208.6,
+                        "close": 1224.62,
+                        "volumn": 5265556020
+                    },
+                    {
+                        "date": "06-1-2014",
+                        "open": 1222.69,
+                        "high": 1231.62,
+                        "low": 1205.44,
+                        "close": 1230.84,
+                        "volumn": 4860342360
+                    }, {
+                        "date": "07-1-2014",
+                        "open": 1236.41,
+                        "high": 1262.44,
+                        "low": 1235.51,
+                        "close": 1262.36,
+                        "volumn": 5068248590
+                    }, {
+                        "date": "08-1-2014",
+                        "open": 1261.69,
+                        "high": 1273.62,
+                        "low": 1253.6,
+                        "close": 1257.73,
+                        "volumn": 4690267310
+                    }, {
+                        "date": "09-1-2014",
+                        "open": 1264.03,
+                        "high": 1277.5,
+                        "low": 1255.11,
+                        "close": 1258.26,
+                        "volumn": 4767159230
+                    }, {
+                        "date": "10-1-2014",
+                        "open": 1247.27,
+                        "high": 1259.5,
+                        "low": 1240.38,
+                        "close": 1255.45,
+                        "volumn": 4277627130
+                    }, {
+                        "date": "13-1-2014",
+                        "open": 1244.21,
+                        "high": 1283.76,
+                        "low": 1244.14,
+                        "close": 1283.56,
+                        "volumn": 4337186140
+                    }, {
+                        "date": "14-1-2014",
+                        "open": 1276.39,
+                        "high": 1300.65,
+                        "low": 1274.33,
+                        "close": 1295.87,
+                        "volumn": 5927237440
+                    }, {
+                        "date": "15-1-2014",
+                        "open": 1293.39,
+                        "high": 1297.76,
+                        "low": 1275.78,
+                        "close": 1277.03,
+                        "volumn": 5163730190
+                    }];
+                */
+
+            var tmpstockdata=data[idx].data;
+            console.log("Client Data=" + JSON.stringify(tmpstockdata));
             dataSets.push({
                 title: data[idx].stockname,
                 fieldMappings: [{
@@ -98,45 +105,12 @@ AmCharts.ready(function() {
                     toField: "volumn"
                 }],
                 compared: idx != 0,
-                //dataProvider: AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '.csv'),
-                dataProvider: data[idx].data,
+                dataProvider: tmpstockdata,
                 categoryField: "date"
-                //stockEvents: events
+                    //stockEvents: events
             });
         }
-        
-        
-        /*
-        for (var x in indices) {
 
-        // add data set
-        dataSets.push({
-        title: indices[x],
-        fieldMappings: [{
-        fromField: "Open",
-        toField: "open"
-        }, {
-        fromField: "High",
-        toField: "high"
-        }, {
-        fromField: "Low",
-        toField: "low"
-        }, {
-        fromField: "Close",
-        toField: "close"
-        }, {
-        fromField: "Volume",
-        toField: "volume"
-        }],
-        compared: x != 0,
-        //dataProvider: AmCharts.loadCSV('/wp-content/uploads/demos/stock/' + indices[x] + '.csv'),
-        dataProvider: AmCharts.loadCSV(indices[x] + '.csv'),
-        categoryField: "Date",
-        //stockEvents: events
-        });
-        }
-        */
-        
         /**
          * Build the chart
          */
@@ -145,7 +119,7 @@ AmCharts.ready(function() {
             pathToImages: "http://www.amcharts.com/lib/3/images/",
             color: "#fff",
             dataSets: dataSets,
-            //dataDateFormat: "DD/MM/YYYY",
+            dataDateFormat: "YYYY-MM-DD",
 
             panels: [{
                     title: "Value",
@@ -236,7 +210,7 @@ AmCharts.ready(function() {
             },
 
             categoryAxesSettings: {
-                equalSpacing: true,
+                //equalSpacing: true,
                 gridColor: "#555",
                 gridAlpha: 1
             },

@@ -35,20 +35,22 @@ router.get('/', function(req, res, next) {
             collection.find({
                 name: stockname
             }).sort({
-                date: 1
+            seq: 1
             }).toArray(function(err, items) {
                 console.log("getStockData() invoked");
-
+                
                 for (var pos in items) {
+                    delete items[pos].seq;
                     delete items[pos].name;
                     delete items[pos]._id;
                     array.push(items[pos])
-
+                    
                 }
+                
                 stockdata["stockname"] = stockname;
                 stockdata["data"] = array;
                 results.push(stockdata);
-                //console.log("getStockData() = " + JSON.stringify(stockdata));
+                console.log("getStockData() = " + JSON.stringify(stockdata));
                 callback();
             });
         }

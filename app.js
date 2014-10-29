@@ -27,7 +27,7 @@ app.all('/app.cache', function(req, res){
 
 //New Cache
 var assets = {
-    '/js/chart2.js': ['/js/chart2.js'],
+    //'/js/chart2.js': ['/js/chart2.js'],
     '/amcharts/amstock.js': ['/amcharts/amstock.js'],
     '/amcharts/serial.js': ['/amcharts/serial.js'],
     '/amcharts/amcharts.js': ['/amcharts/amcharts.js'],
