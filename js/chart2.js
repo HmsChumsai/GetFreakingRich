@@ -210,7 +210,7 @@ AmCharts.ready(function() {
             },
 
             categoryAxesSettings: {
-                //equalSpacing: true,
+                equalSpacing: true,
                 gridColor: "#555",
                 gridAlpha: 1
             },
