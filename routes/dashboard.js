@@ -75,16 +75,17 @@ router.get('/', function(req, res, next) {
         if (err) return next(err);
         //Calculate Indicator value
         talib.execute({
-            name: "ADX",
+            name: "CDLHAMMER",
             startIdx: 0,
             endIdx: marketData.close.length - 1,
+            open: marketData.open,
             high: marketData.high,
             low: marketData.low,
-            close: marketData.close,
-            optInTimePeriod: 9
+            close: marketData.close
         }, function(result) {
 
-            console.log("ADX Function Results:");
+            // Show the result array
+            console.log("CDLHAMMER Function Results:");
             console.log(result);
 
         });
