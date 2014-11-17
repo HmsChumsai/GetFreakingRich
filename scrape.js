@@ -8,18 +8,6 @@ var month=date.getMonth();
 var year=date.getFullYear()
 //console.log(date.format("dd MMM yyyy"));
 
-var now=new Intl.DateTimeFormat("en-US").format(date);
-console.log(now);
-
-function getFormattedDate(input){
-    var pattern=/(.*?)\/(.*?)\/(.*?)$/;
-    var result = input.replace(pattern,function(match,p1,p2,p3){
-        var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-        return (p2<10?"0"+p2:p2)+" "+months[(p1-1)]+" "+p3;
-    });
-    return result;
-}
-
 //console.log(getFormattedDate(date));
 
 url = 'http://marketdata.set.or.th/mkt/sectorquotation.do?sector=SET50&language=th&country=TH';
@@ -33,8 +21,9 @@ request(url, function(error, response, html) {
 
         // $('.bodytext').each(function(day) {
         $('table.bodytext tr td[align=left]').each(function(day) {
-            console.log(day);
+           
             if (day > 4) {
+                 console.log(day);
                 var stock = {
                     name: "",
                     date: "",

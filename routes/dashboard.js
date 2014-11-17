@@ -50,11 +50,11 @@ router.get('/', function(req, res, next) {
                     open.push(items[pos].open);
                     high.push(items[pos].high);
                     low.push(items[pos].low);
-                    close.push(items[pos].cloe);
+                    close.push(items[pos].close);
                     volume.push(items[pos].volume);
                     array.push(items[pos]);
                 }
-                console.log(JSON.stringify(array));
+                //console.log(JSON.stringify(array));
                 marketData = {
                     open: open,
                     high: high,
@@ -65,7 +65,7 @@ router.get('/', function(req, res, next) {
                 stockdata["stockname"] = stockname;
                 stockdata["data"] = array;
                 results.push(stockdata);
-                console.log("getStockData() = " + JSON.stringify(stockdata));
+                //console.log("getStockData() = " + JSON.stringify(stockdata));
                 callback();
             });
         }
@@ -74,10 +74,15 @@ router.get('/', function(req, res, next) {
     async.series(asyncTask, function(err) { //This function gets called after the two tasks have called their "task callbacks"
         if (err) return next(err);
         //Calculate Indicator value
+        console.log(JSON.stringify(marketData));
         talib.execute({
             name: "MACD",
             startIdx: 0,
             endIdx: marketData.close.length - 1,
+            inReal: marketData.close,
+            optInFastPeriod:12,
+            optInSlowPeriod:26,
+            optInSignalPeriod:9,
             open: marketData.open,
             high: marketData.high,
             low: marketData.low,
@@ -85,8 +90,8 @@ router.get('/', function(req, res, next) {
         }, function(result) {
 
             // Show the result array
-            console.log("CDLHAMMER Function Results:");
-            console.log(result);
+            console.log("MACD Function Results:");
+            console.log(JSON.stringify(result));
 
         });
         //End Execute
