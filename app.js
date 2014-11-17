@@ -8,22 +8,8 @@ var cachify = require('connect-cachify');
 
 
 
-
 var app = express();
-/*
-//Cache
-var c = require('appcache-node');
-var cf = c.newCache([
-    'http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all'
-    ,process.env.IP+'/assets/global/img'
-    ]);
-console.log("test dirname="+process.env.IP+'/assets');
-app.all('/app.cache', function(req, res){
-    res.writeHead(200, {'Content-Type': 'text/cache-manifest'});
-    res.end(cf);
-});
-//End Cache
-*/
+
 
 //New Cache
 var assets = {
@@ -76,7 +62,7 @@ MongoClient.connect(url, function(err, db) {
 
 
 var routes = require('./routes/index');
-var charts = require('./routes/charts');
+var charts = require('./routes/dashboard');
 //var ip = require("ip");
 //console.dir ( ip.address() );
 

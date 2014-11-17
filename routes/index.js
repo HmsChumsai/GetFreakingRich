@@ -137,13 +137,7 @@ router.get('/scrape', function(req, res) {
 })
 
 
-/*
-$('table .bodytext [width=100%] [border=0]').each(function(day) {
-    
-        console.log($(this).text());
 
-});
-*/
 
 
 module.exports = router;
