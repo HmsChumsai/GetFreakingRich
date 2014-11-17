@@ -75,7 +75,7 @@ router.get('/', function(req, res, next) {
         if (err) return next(err);
         //Calculate Indicator value
         talib.execute({
-            name: "CDLHAMMER",
+            name: "MACD",
             startIdx: 0,
             endIdx: marketData.close.length - 1,
             open: marketData.open,
@@ -90,7 +90,7 @@ router.get('/', function(req, res, next) {
 
         });
         //End Execute
-        res.render('index.ejs', {
+        res.render('dashboard.ejs', {
             "data": results
         });
         //console.log(stockname);
