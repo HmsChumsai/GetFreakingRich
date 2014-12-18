@@ -4,22 +4,45 @@ var favicon = require('static-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var cachify = require('connect-cachify');
+
 
 
 var app = express();
-//---For parsing
 
-// New Code
-/*
-var mongo = require('mongoskin');
-var monk = require('monk');
-//var db = monk('localhost:27017/nodetest1');
-var db = mongo.db(process.env.MONGOLAB_URI, {native_parser:true});
-*/
+
+//New Cache
+var assets = {
+    //'/js/chart2.js': ['/js/chart2.js'],
+    '/amcharts/amstock.js': ['/amcharts/amstock.js'],
+    '/amcharts/serial.js': ['/amcharts/serial.js'],
+    '/amcharts/amcharts.js': ['/amcharts/amcharts.js'],
+    '/assets/global/scripts/metronic.js': ['/assets/global/scripts/metronic.js'],
+    '/assets/admin/layout/scripts/layout.js': ['/assets/admin/layout/scripts/layout.js'],
+    '/assets/admin/layout/scripts/quick-sidebar.js': ['/assets/admin/layout/scripts/quick-sidebar.js'],
+    '/assets/admin/layout/scripts/demo.js': ['/assets/admin/layout/scripts/demo.js'],
+    '/assets/admin/pages/scripts/index.js': ['/assets/admin/pages/scripts/index.js'],
+    '/assets/admin/pages/scripts/tasks.js': ['/assets/admin/pages/scripts/tasks.js'],
+    '/assets/global/plugins/jquery.min.js': ['/assets/global/plugins/jquery.min.js'],
+    '/assets/global/plugins/jquery-migrate.min.js': ['/assets/global/plugins/jquery-migrate.min.js'],
+    '/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js': ['/assets/global/plugins/jquery-ui/jquery-ui-1.10.3.custom.min.js'],
+    '/assets/global/plugins/bootstrap/js/bootstrap.min.js': ['/assets/global/plugins/bootstrap/js/bootstrap.min.js'],
+    '/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js': ['/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js'],
+    '/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js': ['/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js'],
+    '/assets/global/plugins/jquery.blockui.min.js': ['/assets/global/plugins/jquery.blockui.min.js'],
+    '/assets/global/plugins/jquery.cokie.min.js': ['/assets/global/plugins/jquery.cokie.min.js'],
+    '/assets/global/plugins/uniform/jquery.uniform.min.js': ['/assets/global/plugins/uniform/jquery.uniform.min.js'],
+    '/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js': ['/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js']
+};
+app.use(cachify.setup(assets, {
+    root: __dirname,
+}));
+
+
 //Set Up MongoDb
 var MongoClient = require('mongodb').MongoClient,
     assert = require('assert');
-    
+
 var url = 'mongodb://test:1234@ds035250.mongolab.com:35250/gfrdata';
 var mongoDbObj;
 var collection;
@@ -39,14 +62,14 @@ MongoClient.connect(url, function(err, db) {
 
 
 var routes = require('./routes/index');
-var charts = require('./routes/charts');
+var charts = require('./routes/dashboard');
 //var ip = require("ip");
 //console.dir ( ip.address() );
 
 // view engine setup
 app.set('view engine', 'ejs');
 //app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('view engine', 'jade');
 app.engine('html', require('ejs').renderFile);
 
 app.use(require('prerender-node').set('prerenderToken', 'YOUR_TOKEN'));
@@ -67,7 +90,7 @@ app.use(function(req, res, next) {
 
 //app.use('/', routes);
 //app.use('/users', users);
-app.use('/googled1927f7027c71455.html', function (req, res, next) {
+app.use('/googled1927f7027c71455.html', function(req, res, next) {
     console.log("googled")
     res.render("google.html");
 });
@@ -104,7 +127,6 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
-
 
 console.log('Magic happens on port 8081');
 module.exports = app;
